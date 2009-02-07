@@ -1,5 +1,11 @@
 --TEST--
 PHP_Parser: test @tags
+--SKIPIF--
+<?php
+if (!function_exists('docblock_tokenize')) {
+    print "skip You need to have the pecl docblock extension available";
+}
+?>
 --FILE--
 <?php
 require_once 'PHP/Parser/DocblockParser.php';
